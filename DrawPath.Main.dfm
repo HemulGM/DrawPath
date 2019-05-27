@@ -22,15 +22,47 @@ object FormMain: TFormMain
     Height = 633
     Align = alLeft
     BevelOuter = bvNone
-    Color = 12171705
+    Color = 13882323
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = -6
-    ExplicitTop = -8
+    object Label1: TLabel
+      AlignWithMargins = True
+      Left = 3
+      Top = 87
+      Width = 234
+      Height = 16
+      Align = alTop
+      Caption = #1044#1077#1081#1089#1090#1074#1080#1103
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      ExplicitWidth = 56
+    end
+    object Label2: TLabel
+      AlignWithMargins = True
+      Left = 3
+      Top = 181
+      Width = 234
+      Height = 16
+      Align = alTop
+      Caption = #1042#1080#1076
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      ExplicitLeft = 0
+      ExplicitTop = 175
+      ExplicitWidth = 21
+    end
     object ButtonFlatClear: TButtonFlat
       AlignWithMargins = True
       Left = 3
-      Top = 96
+      Top = 145
       Width = 234
       Height = 30
       Align = alTop
@@ -60,61 +92,77 @@ object FormMain: TFormMain
       Shape = stRoundRect
       ShowFocusRect = False
       TabOrder = 0
-      TabStop = True
       TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
       SubTextFont.Charset = DEFAULT_CHARSET
       SubTextFont.Color = clWhite
       SubTextFont.Height = -13
       SubTextFont.Name = 'Tahoma'
       SubTextFont.Style = []
-      ExplicitLeft = 0
-      ExplicitTop = 0
+      ExplicitTop = 96
     end
     object Panel1: TPanel
       Left = 0
       Top = 0
       Width = 240
-      Height = 57
+      Height = 84
       Align = alTop
       BevelOuter = bvNone
-      Color = 13290186
+      Color = 5329233
       ParentBackground = False
       TabOrder = 1
       object LabelCoord: TLabel
         AlignWithMargins = True
         Left = 3
-        Top = 22
+        Top = 30
         Width = 234
-        Height = 13
+        Height = 21
         Align = alTop
         Caption = 'Coord'
-        ExplicitWidth = 29
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 43
       end
       object LabelCursor: TLabel
         AlignWithMargins = True
         Left = 3
         Top = 3
         Width = 234
-        Height = 13
+        Height = 21
         Align = alTop
         Caption = 'Cursor'
-        ExplicitWidth = 32
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 47
       end
       object LabelLineUnderMouse: TLabel
         AlignWithMargins = True
         Left = 3
-        Top = 41
+        Top = 57
         Width = 234
-        Height = 13
+        Height = 21
         Align = alTop
         Caption = 'LineUnderMouse'
-        ExplicitWidth = 79
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 119
       end
     end
     object ButtonFlatSetCenter: TButtonFlat
       AlignWithMargins = True
       Left = 3
-      Top = 60
+      Top = 109
       Width = 234
       Height = 30
       Align = alTop
@@ -144,7 +192,47 @@ object FormMain: TFormMain
       Shape = stRoundRect
       ShowFocusRect = False
       TabOrder = 2
-      TabStop = True
+      TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+      SubTextFont.Charset = DEFAULT_CHARSET
+      SubTextFont.Color = clWhite
+      SubTextFont.Height = -13
+      SubTextFont.Name = 'Tahoma'
+      SubTextFont.Style = []
+      ExplicitTop = 60
+    end
+    object btnCoordLines: TButtonFlat
+      AlignWithMargins = True
+      Left = 3
+      Top = 203
+      Width = 234
+      Height = 30
+      Align = alTop
+      Caption = #1053#1072#1087#1088#1072#1074#1083#1103#1102#1097#1080#1077
+      ColorNormal = 15921906
+      ColorOver = 16514043
+      ColorPressed = 14737632
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      Flat = False
+      FontOver.Charset = DEFAULT_CHARSET
+      FontOver.Color = clWindowText
+      FontOver.Height = -13
+      FontOver.Name = 'Tahoma'
+      FontOver.Style = []
+      FontDown.Charset = DEFAULT_CHARSET
+      FontDown.Color = clWindowText
+      FontDown.Height = -13
+      FontDown.Name = 'Tahoma'
+      FontDown.Style = []
+      IgnorBounds = True
+      OnClick = btnCoordLinesClick
+      RoundRectParam = 0
+      Shape = stRoundRect
+      ShowFocusRect = False
+      TabOrder = 3
       TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
       SubTextFont.Charset = DEFAULT_CHARSET
       SubTextFont.Color = clWhite
@@ -152,7 +240,7 @@ object FormMain: TFormMain
       SubTextFont.Name = 'Tahoma'
       SubTextFont.Style = []
       ExplicitLeft = 0
-      ExplicitTop = 41
+      ExplicitTop = 244
     end
   end
   object DrawPanel: TDrawPanel
@@ -179,8 +267,8 @@ object FormMain: TFormMain
     Top = 304
   end
   object PopupMenuLine: TPopupMenu
-    Left = 472
-    Top = 392
+    Left = 552
+    Top = 368
     object MenuItemLineDelete: TMenuItem
       Caption = #1059#1076#1072#1083#1080#1090#1100
       OnClick = MenuItemLineDeleteClick
