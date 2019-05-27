@@ -97,7 +97,7 @@ type
   end;
 
 const
-  GridDIV = 20;
+  GridDIV = 40;
 
 var
   FormMain: TFormMain;
@@ -280,6 +280,17 @@ begin
     Brush.Color := clWhite;
     Brush.Style := bsSolid;
     FillRect(DrawData.FieldRect);
+    Pen.Color := $00F6F6F6;
+    for i := 1 to DrawData.FieldRect.Width div (GridDIV div 2) do
+    begin
+      MoveTo(i * (GridDIV div 2), 0);
+      LineTo(i * (GridDIV div 2), DrawData.FieldRect.Height);
+    end;
+    for i := 1 to DrawData.FieldRect.Height div (GridDIV div 2) do
+    begin
+      MoveTo(0, i * (GridDIV div 2));
+      LineTo(DrawData.FieldRect.Width, i * (GridDIV div 2));
+    end;
     Pen.Color := $00EDEDED;
     for i := 1 to DrawData.FieldRect.Width div GridDIV do
     begin
