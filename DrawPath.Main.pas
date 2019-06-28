@@ -65,6 +65,7 @@ type
     procedure MenuItemLineDeleteClick(Sender: TObject);
     procedure DrawPanelMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure btnCoordLinesClick(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     FDrawCurrent: Boolean;
     FCurentLineStart: TPoint;
@@ -399,8 +400,8 @@ begin
         begin
           if FDrawCurrent then
           begin
-         //≈сли непрерывно, то не устанавливать False
-         //FDrawCurrent:=False;
+             //≈сли непрерывно, то не устанавливать False
+             //FDrawCurrent:=False;
             if FCurentLineStart = FFieldPos then
               Exit;
             FLines.Add(TLine.Create(FCurentLineStart, FFieldPos));
@@ -503,6 +504,18 @@ begin
   FInputMode := imLine;
   FOffsetCoord := Point(0, 0);
   UpdateInfo;
+end;
+
+procedure TFormMain.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  case Key of
+    VK_ESCAPE:
+     begin
+       FDrawCurrent := False;
+       InputMode := imLine;
+     end;
+  end;
 end;
 
 procedure TFormMain.MenuItemLineDeleteClick(Sender: TObject);
